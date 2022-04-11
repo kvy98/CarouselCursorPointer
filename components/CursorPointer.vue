@@ -26,6 +26,12 @@ export default {
     }
   },
   mounted() {
+    window.addEventListener('mouseover', (e) => {
+      const touch = matchMedia('(hover: none)').matches
+      if (touch) return
+      const ele = e.target
+      this.isShow = this.isDescendant(ele)
+    })
     window.addEventListener('mousemove', (e) => {
       this.cursorPos = {
         x: e.clientX + 'px',
@@ -38,11 +44,8 @@ export default {
     window.addEventListener('mouseup', (e) => {
       this.isClick = false
     })
-    window.addEventListener('mouseover', (e) => {
-      const touch = matchMedia('(hover: none)').matches
-      if (touch) return
-      const ele = e.target
-      this.isShow = this.isDescendant(ele)
+    window.addEventListener('scroll', (e) => {
+      this.isShow = false
     })
   },
   methods: {

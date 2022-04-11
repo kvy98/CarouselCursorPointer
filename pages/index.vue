@@ -3,7 +3,7 @@
     <cursor-hover-wrapper>
       <CarouselFreeMode />
     </cursor-hover-wrapper>
-    <div style="height: 200px"></div>
+    <div style="height: 1000px"></div>
     <cursor-hover-wrapper>
       <CarouselFreeMode />
     </cursor-hover-wrapper>
