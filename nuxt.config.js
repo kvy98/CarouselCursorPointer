@@ -12,7 +12,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@egjs/vue-flicking/dist/flicking.css'],
+  css: ['~assets/base.css', '@egjs/vue-flicking/dist/flicking.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{ src: '~plugins/flicking.js', ssr: true }],
@@ -24,8 +24,15 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    // '@nuxtjs/ngrok',
   ],
-
+  ngrok: {
+    authtoken: process.env.NGROK_AUTHTOKEN,
+    auth: process.env.NGROK_AUTH,
+    region: 'eu',
+    addr: 3000,
+    proto: 'http', // reserved tunnel name https://nuxt.ngrok.io
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
@@ -41,7 +48,9 @@ export default {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
   },
-
+  bootstrapVue: {
+    icons: true,
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
