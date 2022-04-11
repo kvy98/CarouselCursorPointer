@@ -26,20 +26,6 @@ export default {
       },
     }
   },
-  mounted() {
-    // const container = document.querySelector('.wrapper-container')
-    // container.addEventListener('mouseover', (e) => {
-    //   this.cursorStyle.display = 'block'
-    // })
-    // container.addEventListener('mouseleave', (e) => {
-    //   this.cursorStyle.display = 'none'
-    // })
-    // container.addEventListener('mousemove', (e) => {
-    //   const { clientX, clientY } = e
-    //   this.cursorStyle.top = `${clientY}px`
-    //   this.cursorStyle.left = `${clientX}px`
-    // })
-  },
 }
 </script>
 <style lang="scss" scoped>

@@ -26,24 +26,24 @@ export default {
     }
   },
   mounted() {
-    if (!this.isMobile) {
-      window.addEventListener('mousemove', (e) => {
-        this.cursorPos = {
-          x: e.clientX + 'px',
-          y: e.clientY + 'px',
-        }
-      })
-      window.addEventListener('mousedown', (e) => {
-        this.isClick = true
-      })
-      window.addEventListener('mouseup', (e) => {
-        this.isClick = false
-      })
-      window.addEventListener('mouseover', (e) => {
-        const ele = e.target
-        this.isShow = this.isDescendant(ele)
-      })
-    }
+    window.addEventListener('mousemove', (e) => {
+      this.cursorPos = {
+        x: e.clientX + 'px',
+        y: e.clientY + 'px',
+      }
+    })
+    window.addEventListener('mousedown', (e) => {
+      this.isClick = true
+    })
+    window.addEventListener('mouseup', (e) => {
+      this.isClick = false
+    })
+    window.addEventListener('mouseover', (e) => {
+      const touch = matchMedia('(hover: none)').matches
+      if (touch) return
+      const ele = e.target
+      this.isShow = this.isDescendant(ele)
+    })
   },
   methods: {
     toggleShowPointer(state) {

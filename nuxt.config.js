@@ -33,6 +33,9 @@ export default {
     addr: 3000,
     proto: 'http', // reserved tunnel name https://nuxt.ngrok.io
   },
+  server: {
+    host: '0', // default: localhost
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
